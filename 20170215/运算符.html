@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+    <p>i=10,j=15,i+j=?;</p>
+    <p id="a"></p>
+    <button onclick="sum()">查看结果</button>
+    <script>
+        function sum() {  //function是声明函数
+            var i=10;
+            var j=15;
+            var m=i+j;
+            /*说明 i++和++i不同，例如，j=i++，输出j为10，后++是先赋值后运算；而j=++i，输出j为11，先++再运算。
+            * 还有就是i+=j是表示i=i+j*/
+            document.getElementById("a").innerHTML=m;
+        }
+    </script>
+    <br/>
+    <script>
+        /*其中的条件语句if else 、选择语句switch和循环语句for（）和java类似，但是for还有*/
+        var z=[1,2,3,4,5,6];
+        /*for(var x=0;x<6;x++){
+            document.write(z[x]+"、");
+        }*/
+        var x;
+        for(x in z){  //可用in
+            document.write(z[x]+"、");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局和局部变量</title>
+</head>
+<body>
+    <script>
+        var n = 10; m=20;  //全局变量，任何地方都可以使用
+        function demo() {
+            var i = 30;  //局部变量，只能在当前函数中使用
+            x = 40;   //全局变量，任何地方都可用使用，但是必须是执行过demo这个函数后。
+            alert(i);
+        }
+       // alert(i);  //局部变量，不能显示
+        demo();  //若不执行这句话，之后的alert(x)不能输出
+        alert(x);
+    </script>
+</body>
+</html>

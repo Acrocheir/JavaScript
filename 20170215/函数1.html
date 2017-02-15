@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带参数的函数</title>
+</head>
+<body>
+    <p>a=10,b=30</p>
+    <br/>
+    <p id="pid"></p>
+    <script>
+        /*带参数的函数*/
+        function demo(a,b,c) {
+            var sum = a+b*c;
+            alert(sum);
+        }
+        demo(1,5,2);
+        demo(4,2,3);
+
+        /*返回值的函数 return*/
+        function demo1() {
+            return "Hello";
+        }
+        var a = demo1();
+        alert(a);
+
+        function demo2(a,b) {
+            if(a>b){
+                return "a比b大";
+            }
+            else if(a<b){
+                return "b比a大";
+            }
+            else{
+                return "a和b一样大";
+            }
+        }
+        document.getElementById("pid").innerHTML=demo2(10,30);
+    </script>
+</body>
+</html>
