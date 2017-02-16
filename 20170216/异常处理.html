@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异常处理</title>
+</head>
+<body>
+    <form>
+        <input id="txt" type="text">
+        <input id="btn" type="button" onclick="demo_1()" value="按钮">
+    </form>
+    <script>
+        function demo() {
+            try{
+                alert(str);
+            }catch(err){
+                alert(err);
+            }
+        }
+        demo();
+    </script>
+    <!--throw 的使用-->
+    <script>
+        function demo_1() {
+            try {
+                var e = document.getElementById("txt").value;
+                if (e == "") {
+                    throw "请输入内容";
+                }
+            }catch (err){
+                alert(err);
+            }
+        }
+    </script>
+</body>
+</html>

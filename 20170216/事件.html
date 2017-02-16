@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <link rel="stylesheet" type="text/css" href="divstyle.css">
+</head>
+<body onload="mgs()">
+    鼠标移出和经过事件
+    <div class="div" onmouseout="onOut(this)" onmouseover="onOver(this)"></div> <!--this指向当前函数-->
+    <script>
+        function onOut(ooj) {
+            ooj.innerHTML = "鼠标不在里面！";
+        }
+        function onOver(ooj) {
+            ooj.innerHTML = "鼠标在里面！";
+        }
+    </script>
+
+    <form>
+        文本改变事件
+        <input type="text" onchange="changeDemo(this)">
+        <br/>
+        选中事件和获得焦点
+        <input type="text" onselect="changeDemo1(this)" onfocus="changeDemo2(this)">
+        <!--或者直接  <input type="text" onchange="alert('你的内容改变了！')">  -->
+    </form>
+    <script>
+        function changeDemo(bg) {
+            alert("你的内容改变了！");
+        }
+        function changeDemo1(bg) {
+            bg.style.background = "red";
+        }
+        function changeDemo2(bg) {
+            bg.style.background = "blue";
+        }
+        function mgs() {
+            alert("网页内容加载完毕！");
+        }
+    </script>
+</body>
+</html>

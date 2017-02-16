@@ -1,0 +1,6 @@
+/*前面加一个.是对class，前面加#是对id*/
+.div{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}

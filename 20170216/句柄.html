@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>句柄的使用</title>
+</head>
+<body>
+    一个按钮可以有多个句柄,及添加多个事件
+    <button id="btn">句柄按钮</button>
+    <script>
+        var x = document.getElementById("btn");
+        /*句柄，及按钮的事件为点击事件，下面括号中的第一项为事件的类型。按钮现在有两个事件*/
+        x.addEventListener("click",hello);
+        x.addEventListener("click",world);
+//        x.removeEventListener("click",hello);  //移除x的hello事件
+        function hello() {
+            alert("Hello");
+        }
+        function world() {
+            alert("World");
+        }
+    </script>
+</body>
+</html>

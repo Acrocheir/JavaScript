@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变HTML的属性</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <a id="aid" href="https://www.baidu.com" onclick="demo()">是不是百度一下？</a>
+    <!--改变HTML属性：使用属性：attribute-->
+    <script>
+        function demo() {
+            document.getElementById("aid").href = "https://www.hao123.com";
+        }
+    </script>
+    <br/>
+    <div id="div" class="div"></div>
+    <button onclick="demo()">变为蓝色</button>
+    <script>
+        function demo() {
+            document.getElementById("div").style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>
