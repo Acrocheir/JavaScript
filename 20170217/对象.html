@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+    <!--创建对象-->
+    <script>
+        people = new Object();
+        people.name = "小帅";
+        people.age = "20";
+        document.writeln("name:"+people.name+",age:"+people.age+"<br/>");
+
+        //或者
+        people_1 = {name:"小王",age:20};
+        document.writeln("name:"+people_1.name+",age:"+people_1.age+"<br/>");
+
+        function people_2(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        son = new people_2("小张",20);
+        document.writeln("name:"+son.name+",age:"+son.age+"<br/>");
+        var str = "Hello World！";
+        document.writeln("字符串的长度："+str.length+"<br/>");
+        //indexOf()是查找字符串，在已有的字符串中找需要找的字符串，找到就返回它的位置，没找到就返回-1
+        document.writeln("world这串字符串的位置在："+str.indexOf("world")+"<br/>");
+        //match()内容匹配，有就打印出来，没有返回空
+        document.writeln("是否有world，是就打印出来："+str.match("World")+"<br/>"); //区分大小写
+        //replace()替换内容
+        document.writeln("替换后的字符串为："+str.replace("World","你好啊！")+"<br/>");
+        //字符串大小写转换
+        document.writeln("字符串全部转为大写："+str.toUpperCase()+"<br/>");
+        document.writeln("字符串全部转为小写："+str.toLowerCase()+"<br/>");
+        //字符串转为数组
+        var str1 = "one,two,three";
+        var s = str1.split(",");
+        document.writeln(str1+"分割的第二部分为："+s[1]);
+    </script>
+</body>
+</html>

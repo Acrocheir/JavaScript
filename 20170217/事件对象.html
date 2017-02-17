@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+</head>
+<body>
+    <div id="div">
+        <button id="btn">获取事件对象</button>
+        <br/>
+        阻止默认事件的跳转，及不会跳到百度
+        <br/>
+        <a id="aid" href="https://www.baidu.com">百度一下</a>
+    </div>
+    <br/>
+    向上冒泡，点击按钮，div中的事件也会执行，按钮在div中，是向上冒泡执行的，按钮的事件都执行了，div自然执行了。可用阻止事件冒泡
+    <script>
+        document.getElementById("btn").addEventListener("click",demo);
+        document.getElementById("div").addEventListener("click",demoDiv);
+        document.getElementById("aid").addEventListener("click",demoA);
+        function demo(event) {
+            alert("事件类型："+event.type); //获取事件类型
+            alert("事件目标："+event.target);
+           // event.stopPropagation(); //阻止事件冒泡
+        }
+        function demoDiv() {
+            alert("事件的冒泡，div的执行");
+        }
+        function demoA(event) {
+            event.stopPropagation(); //阻止冒泡
+            event.preventDefault(); //阻止默认事件的执行
+        }
+    </script>
+</body>
+</html>
