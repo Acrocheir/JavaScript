@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data日期对象</title>
+</head>
+<body onload="startTime()">
+    <div id="divId"></div>
+    <script>
+        function startTime() {
+            var date = new Date();
+            var h = date.getHours(); //获取小时
+            var m = date.getMinutes(); //获得分钟
+            var s = date.getSeconds(); //获得秒钟
+            //为了均为两位数字
+            h = checkTime(h);
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById("divId").innerHTML = h+":"+m+":"+s;
+            //递归调用，没1000毫秒加载一次，及1秒
+            t = setTimeout(function () {
+                startTime();
+            },1000);
+        }
+        function checkTime(t) {
+            if(t<10){
+                t = "0"+t;
+            }
+            return t;
+        }
+
+        /*var date = new Date();
+        document.writeln("当前年份："+date.getFullYear());  //当前年份
+        document.writeln("当前时间的毫秒数："+date.getTime());  //当前时间的毫秒数
+        date.setFullYear(2010,1,1);  //设置时间
+        document.writeln("重新设置的时间为："+date);*/
+    </script>
+</body>
+</html>

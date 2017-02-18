@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array数组对象</title>
+</head>
+<body>
+    <script>
+        //元素合并
+        var a = ["Hello~","你好!"];
+        var b = ["Hi~","帅哥！"];
+        var c = a.concat(b);  //从a来合并b
+        document.writeln(c);
+
+        //排序
+        var zimu = ["a","d","e","c"];
+        var x = zimu.sort(); //排序（升序）,不单单是字母，数字也可以
+        document.writeln(x+"<br/>");
+        var zimu1 = ["5","3","2","4","1"];
+        //降序
+        document.writeln(zimu1.sort(function (a,b) {
+            return b-a;  //这表示降序排列：b-a,而a-b表示升序
+        })+"<br/>");
+
+        //末尾追加
+        var v = ["a","b"];
+            v.push("c")
+        document.writeln(v+"<br/>");
+
+        //翻转
+        var e = ["a","b","c"];
+        document.writeln(e.reverse());
+    </script>
+</body>
+</html>
