@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器</title>
+</head>
+<body>
+    <button id="pid" onclick="stopTime()">停止</button>
+    <p id="ptime"></p><br/>
+    弹窗
+    <button id="bid1" onclick="time1()">三秒后弹出</button>
+    <button id="bid2" onclick="time2()">每隔三秒弹出</button>
+    <button id="bid3" onclick="stopTime2()">停止弹出</button>
+    <script>
+        var time = setInterval(function () {
+            getTime();
+        },1000);
+        function getTime() {
+            var d = new Date();
+            var t = d.toLocaleTimeString(); //转换为时分秒的格式
+            document.getElementById("ptime").innerHTML = t;
+        }
+
+        function stopTime() {
+            clearInterval(time);
+        }
+        /*三秒后执行*/
+        function time1() {
+            time_1 = setTimeout(function () {
+                alert("我是在三秒后执行的！");
+            },3000);
+        }
+        /*每隔三秒执行，用自己调用自己*/
+        function time2() {
+            alert("我每隔三秒执行一次！");
+            time_2 = setTimeout(function () {
+                time2();
+            },3000);
+        }
+        /*停止每隔三秒弹出窗口*/
+        function stopTime2() {
+            clearTimeout(time_2);
+        }
+    </script>
+</body>
+</html>

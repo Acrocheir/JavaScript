@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象控制HTML</title>
+</head>
+<body>
+    <p name="pname">第一个p标签</p>
+    <p name="pname">第二个p标签</p>
+    <p name="pname">第三个p标签</p>
+    <p name="pname">第四个p标签</p>
+    <a id="aid" title="这是a标签的title属性！">Hello</a>
+    <a id="aid2">World</a>
+    <!--li就为ul的子结点-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div id="divid">
+        <p id="pid">div的p元素</p>
+    </div>
+    <script>
+        function getName() {
+            //var count = document.getElementsByName("pname");  //标签中的name
+            var count = document.getElementsByTagName("p");  //这个是具体的标签
+            alert(count.length);
+            var p = count[0];
+            p.innerHTML = "第一个p标签被改为Hello！";
+        }
+        /*得到标签的属性*/
+        function getAttr() {
+            var h = document.getElementById("aid");
+            var attr = h.getAttribute("title");
+            alert("a标签的title属性为："+attr);
+        }
+        /*设置属性*/
+        function setAttr() {
+            var anode = document.getElementById("aid2");
+            anode.setAttribute("title","这是World标签的属性！"); //前一个为要设置的属性，后为属性是值
+            alert(anode.getAttribute("title"));
+        }
+        /*得到子结点*/
+        function getChildNode() {
+            var childnode = document.getElementsByTagName("ul")[0].childNodes;
+            alert(childnode.length);  //得到为7的原因是有四处空白项，ul后一处，li后三处。
+            alert(childnode[0].nodeType); //为3 两个空白项
+        }
+        /*获取父节点*/
+        function getParentNode() {
+            var parentnode = document.getElementById("pid");
+            alert(parentnode.parentNode.nodeName);  //弹出父节点的名字
+        }
+        /*创建结点*/
+        function createNode() {
+            var body = document.body;  //得到body对象
+            var input = document.createElement("input"); //创建的结点的名字为input
+            input.type = "button";  //创建结点的类型
+            input.value = "按钮";  //结点默认值
+            body.appendChild(input); //把创建的结点放到body中
+        }
+        /*在指定位置前创建元素*/
+        function addNode() {
+            var div = document.getElementById("divid");
+            var pnode = document.getElementById("pid");
+            var p = document.createElement("p");
+            p.innerHTML = "这是动态创建的一个p结点，在div的第一个！";
+            div.insertBefore(p,pnode);
+        }
+        /*删除结点*/
+        function removeNode() {
+            var div = document.getElementById("divid");
+            var p = div.removeChild(div.childNodes[1]); //删去div中的第一个子结点
+        }
+        /*得到屏幕的宽高度*/
+        function getSize() {
+            //为了浏览器的兼容性，写两种
+            var width = document.body.offsetWidth||document.documentElement.offsetWidth; //不带滚动条
+            var height = document.body.offsetHeight||document.documentElement.offsetHeight; //不带滚动条
+            //var width = document.body.scrollWidth||document.documentElement.scrollWidth; //带滚动条，高度同理
+            alert("宽度："+width+"，"+"高度："+height);
+        }
+
+        getSize();
+        //removeNode();
+        //addNode();
+        //createNode();
+        //getParentNode();
+        //getChildNode();
+        //setAttr();
+        //getName();
+        //getAttr();
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+</head>
+<body>
+    <button id="bid" onclick="indexIn()">新页面</button><br/>
+    <button id="bid2" onclick="indexOut()">关闭当前页面</button>
+    <script>
+        //window.document.write("宽度："+window.innerWidth+"，高度："+window.innerHeight);
+        function indexIn() {
+            //其实其中有三个参数，第一个为url，第二个为window的名字，第三个为各种样式设置
+            window.open("NewFile.html","newWindow","width = 500 height = 500");
+        }
+        function indexOut() {
+            window.close();
+        }
+    </script>
+</body>
+</html>

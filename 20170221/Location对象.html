@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+</head>
+<body>
+    <ul>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+        <li id="li4"></li>
+        <li id="li5"></li>
+        <li id="li6"></li>
+        <li id="li7"></li>
+    </ul>
+    <br/>
+    <button id="bid" onclick="abc()">加载新文档</button>
+    <script>
+        document.getElementById("li1").innerHTML = "主机域名为："+window.location.hostname;
+        document.getElementById("li2").innerHTML = "页面路径为："+window.location.pathname;
+        document.getElementById("li3").innerHTML = "当前端口为："+window.location.port;
+        document.getElementById("li4").innerHTML = "Web协议为："+window.location.protocol;
+        document.getElementById("li5").innerHTML = "当前页面的URL为："+window.location.href;
+        document.getElementById("li6").innerHTML = "可以宽度："+screen.availWidth+"，可用高度："+screen.availHeight;
+        document.getElementById("li7").innerHTML = "屏幕宽度："+screen.width+"，屏幕高度："+screen.height;
+
+        function abc() {
+            location.assign("https://www.baidu.com");
+        }
+    </script>
+</body>
+</html>

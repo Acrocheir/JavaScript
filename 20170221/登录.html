@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="username">
+        <input type="button" onclick="go()" value="登录">
+    </form>
+    <script>
+        function go() {
+            var name = document.getElementById("username").value;
+            if(name=="007"){
+                history.go(-1); //返回之前的页面
+            }else{
+                alert("请输入 007");
+            }
+        }
+    </script>
+</body>
+</html>
